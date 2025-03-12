@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chennai Air Quality Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Chennai Air Quality Dashboard</h1>
+
+    <!-- Historical Data Chart -->
+    <div id="historical-chart" class="chart"></div>
+
+    <!-- Prediction Form -->
+    <form id="prediction-form">
+      <h2>Predict PM2.5</h2>
+      <label for="T">Temperature (T):</label>
+      <input type="number" step="0.1" id="T" name="T" required>
+
+      <label for="TM">Max Temp (TM):</label>
+      <input type="number" step="0.1" id="TM" name="TM" required>
+
+      <label for="Tm">Min Temp (Tm):</label>
+      <input type="number" step="0.1" id="Tm" name="Tm" required>
+
+      <label for="SLP">Sea Level Pressure (SLP):</label>
+      <input type="number" step="0.1" id="SLP" name="SLP" required>
+
+      <label for="H">Humidity (H):</label>
+      <input type="number" step="0.1" id="H" name="H" required>
+
+      <label for="VV">Visibility/Vapor Pressure (VV):</label>
+      <input type="number" step="0.1" id="VV" name="VV" required>
+
+      <label for="V">Wind Speed (V):</label>
+      <input type="number" step="0.1" id="V" name="V" required>
+
+      <label for="VM">Max Wind Speed (VM):</label>
+      <input type="number" step="0.1" id="VM" name="VM" required> 
+
+      <button type="submit">Predict</button>
+    </form>
+
+    <!-- Prediction Result -->
+    <div id="prediction-result" style="background-color: beige;"></div>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
