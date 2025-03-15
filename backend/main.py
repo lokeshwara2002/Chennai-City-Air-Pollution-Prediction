@@ -129,6 +129,18 @@ def get_history():
         logger.error(f"Error loading history: {str(e)}")
         return JSONResponse(content={"error": "Failed to load history"}, status_code=500)
 
+@app.get("/get-history")
+async def get_history():
+    try:
+        with open("backend/history.json", "r") as file:
+            history_data = json.load(file)
+        return history_data
+    except FileNotFoundError:
+        return {"error": "History file not found"}
+    except json.JSONDecodeError:
+        return {"error": "Error decoding history data"}
+    
+    
 @app.get("/get-forecast")
 def get_forecast(days: int = Query(7, title="Number of days to predict")):
     """Predict future PM2.5 levels dynamically."""
