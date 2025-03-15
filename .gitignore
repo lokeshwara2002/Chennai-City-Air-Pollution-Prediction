@@ -1,8 +1,2 @@
 myvenv/
 __pycache__/
-*.log
-*.pkl
-*.joblib
-*.keras
-*.h5
-*.dll
