@@ -9,7 +9,7 @@ import logging
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 
-def train_model(data_path="Real_Combine.csv", model_path="pm25_model.joblib"):
+def train_model(data_path="backend/Real_Combine.csv", model_path="pm25_model.joblib"):
     """Train an improved Random Forest model to predict PM2.5 levels."""
     try:
         # Load dataset

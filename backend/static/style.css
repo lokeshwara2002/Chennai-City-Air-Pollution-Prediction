@@ -1,69 +1,266 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Global Styles */
+* {
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradient background */
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-h1 {
-    background: rgba(255, 255, 255, 0.8); /* Light background for contrast */
-    padding: 10px; /* Padding around the text */
-    border-radius: 5px; /* Rounded corners */
-    display: inline-block; /* Fit the background to the text */
+/* Gradient Background */
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    text-align: center;
+    padding-top: 80px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 1s ease-in-out;
 }
 
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffcc00;
+    text-shadow: 0px 0px 15px rgba(255, 255, 0, 0.8);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+.nav-links a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-size: 20px;
+    transition: all 0.3s ease-in-out;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+.nav-links a:hover {
+    color: #ff6600;
+    text-shadow: 0px 0px 20px rgba(255, 102, 0, 1);
+    transform: scale(1.1);
+}
+
+/* Container */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    width: 85%;
+    max-width: 1000px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(20px);
+    margin-top: 30px;
+    animation: slideUp 1s ease-in-out;
+}
+
+/* Headings */
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 20px rgba(255, 255, 255, 0.5);
+    animation: neonGlow 2s infinite alternate;
+}
+
+h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Charts */
+.chart {
+    width: 100%;
+    height: 350px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-size: 20px;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+/* Input Fields */
+input {
+    width: 80%;
+    max-width: 450px;
+    padding: 12px;
+    font-size: 18px;
+    border: 2px solid #ffcc00;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    outline: none;
+    transition: 0.3s;
     text-align: center;
 }
 
-.chart {
-    margin: 20px 0;
-    height: 400px;
+input:focus {
+    border-color: #ff6600;
+    box-shadow: 0px 0px 15px #ff6600;
 }
 
-form {
-    margin: 20px 0;
-    background-color: #ffffff;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-form label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-form input {
-    width: 100%;
-    max-width: 300px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-}
-
+/* Submit Button */
 button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
+    margin-top: 15px;
+    padding: 14px 25px;
+    font-size: 20px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff6600, #ffcc00);
     border: none;
-    border-radius: 4px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    color: #333;
+    transition: 0.3s;
+    box-shadow: 0px 5px 15px rgba(255, 204, 0, 0.5);
 }
 
 button:hover {
-    background-color: #0056b3;
+    transform: scale(1.08);
+    box-shadow: 0px 0px 20px #ff6600;
 }
 
+/* Prediction Result */
 #prediction-result {
     margin-top: 20px;
-    font-size: 1.2em;
-    color: green;
-    background-color: #ffffff;
+    padding: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
+    color: #ffcc00;
+}
+
+/* Tables for History */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+th {
+    background: rgba(255, 255, 255, 0.3);
+    font-size: 18px;
+}
+
+td {
+    color: #ffcc00;
+    font-size: 16px;
+}
+
+tr:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Forecast Chart */
+canvas {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95);
+        width: 220px;
+        display: none;
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    .nav-links li {
+        margin: 12px 0;
+        text-align: center;
+    }
+
+    .navbar.active .nav-links {
+        display: flex;
+    }
+
+    .container {
+        width: 95%;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes neonGlow {
+    0% { text-shadow: 0px 0px 10px rgba(255, 255, 0, 0.8); }
+    100% { text-shadow: 0px 0px 25px rgba(255, 255, 0, 1); }
+}
+.conclusion-box {
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+    text-align: center;
 }
 

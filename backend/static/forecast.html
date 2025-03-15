@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM2.5 Forecast</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-logo">Air Quality Forecast</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/static/history.html">History</a></li>
+            <li><a href="/static/forecast.html">Forecast</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>PM2.5 Forecast</h1>
+
+        <!-- Forecast Selection -->
+        <label for="forecast-range">Select Forecast Period:</label>
+        <select id="forecast-range">
+            <option value="7">1 Week</option>
+            <option value="14">2 Weeks</option>
+            <option value="60">2 Months</option>
+            <option value="120">4 Months</option>
+        </select>
+        <button id="forecast-btn">Show Forecast</button>
+
+        <!-- Forecast Chart -->
+        <div id="forecast-chart" class="chart"></div>
+    </div>
+    <div id="forecast-conclusion"></div>
+    </div>
+
+    <script src="/static/forecast.js"></script>
+</body>
+</html>
