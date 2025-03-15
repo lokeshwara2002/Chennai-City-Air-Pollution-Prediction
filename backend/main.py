@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 app = FastAPI()
 
 # Mount static files directory
-app.mount("/", StaticFiles(directory="backend/static", html=True), name="static")
+app.mount("/static", StaticFiles(directory="backend/static"), name="static")
 
 # File paths
 DATA_PATH = "backend/Real_Combine.csv"
